@@ -92,7 +92,7 @@
   };
 
   /* 舊網址轉到新頁面。新頁面都上線、檢查過後，才把 REDIRECTS_ON 改成 true */
-  var REDIRECTS_ON = false;
+  var REDIRECTS_ON = true;
   var REDIRECTS = {
     'about:1': LINKS.about + '#board',
     'about:2': LINKS.about + '#history',
