@@ -7,7 +7,7 @@
 - https://kindredplus.github.io/img/（照片、LOGO、首頁海報）
 - https://kindredplus.github.io/pages/（各頁內容的原稿；預約諮詢頁的說明內容也由這裡讀取）
 
-官網後台「關於賽親 → 關於賽親列表」排序第一筆（緣起）的標題後面，接了一段：
+官網後台「關於賽親 → 關於賽親列表」排序第一筆（關於賽親，原標題「緣起」）的標題後面，接了一段：
 
 ```
 <script src="https://kindredplus.github.io/kp.js"></script>
@@ -30,9 +30,9 @@
 
 1. 改電話、地址、LINE、臉書連結、立案字號：改 kp.js 的 `SITE`。
 2. 改頁首選單項目、順序、下拉項目：改 kp.js 的 `MENU`；頁尾欄位跟著 `MENU` 與 `FOOTER_COLS`，連結在 `LINKS`。
-3. 獨居陪伴計畫、樂齡共學計畫兩頁在後台建好後：把網址填進 kp.js 的 `LINKS.alone`、`LINKS.learning`。填好之前，選單和內容裡這兩頁的連結會連到首頁「我們的計畫」。
+3. 獨居陪伴計畫（caring_methods&id=22）、樂齡共學計畫（caring_methods&id=23）已填入 kp.js 的 `LINKS.alone`、`LINKS.learning`（115/10/30）。
 4. 改各頁瀏覽器標題與搜尋說明：改 kp.js 的 `PAGES`。
-5. 舊網址轉址：新頁面都上線、檢查過後，kp.js 的 `REDIRECTS_ON` 改成 `true`。
+5. 舊網址轉址（115/10/30 開啟）：單一舊頁寫在 kp.js 的 `REDIRECTS`；整個不再使用的單元（專家講座、相關連結）寫在 `REDIRECT_ACTIONS`。列在這裡的舊頁，在後台重新啟用也會被轉走；要恢復某一頁，先從這裡拿掉那一筆。`REDIRECTS_ON` 改成 `false` 即全部停止轉址。
 6. 改預約諮詢頁的說明文字：改 pages/contact.html。
 7. 改顏色、字級：改 kp.css 最上面的 `:root`。
 

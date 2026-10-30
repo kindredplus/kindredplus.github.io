@@ -109,7 +109,37 @@
     'caring_methods:18': LINKS.plan,
     'caring_methods:19': LINKS.plan + '#join',
     'caring_methods:21': LINKS.plan + '#join',
-    'news:1': LINKS.news, 'news:8': LINKS.news, 'news:10': LINKS.news, 'news:11': LINKS.news, 'news:12': LINKS.news, 'news:13': LINKS.news
+    'news:1': LINKS.news, 'news:8': LINKS.news, 'news:10': LINKS.news, 'news:11': LINKS.news, 'news:12': LINKS.news, 'news:13': LINKS.news,
+    /* 115/10/30 補：不帶編號的各區首頁，與後台早已停用的舊頁（停用頁點進去是空白） */
+    'about:': LINKS.about,
+    'about:6': LINKS.contact,              /* 公益諮詢申請 */
+    'about:7': LINKS.rules,                /* 網站及資訊使用規範（現用 caring_methods&id=20） */
+    'about:8': LINKS.plan + '#join',       /* 回饋服務章程 */
+    'about:12': LINKS.about,               /* 先關閉 */
+    'recruitment:': LINKS.donate,
+    'caring_methods:': LINKS.home + '#programmes',
+    'caring_methods:3': LINKS.plan + '#content',   /* 長者生平紀錄與實踐(舊) */
+    'caring_methods:4': LINKS.trust,               /* 擔任銀行信託監察人(舊) */
+    'caring_methods:5': LINKS.plan,                /* 持續性訪視服務(舊) */
+    'caring_methods:6': LINKS.learning,            /* 身心靈健康活動與課程(舊) */
+    'caring_methods:7': LINKS.plan + '#content',   /* 居家服務長照資訊及遺產稅務法律諮詢(舊) */
+    'caring_methods:8': LINKS.plan,                /* 持續性訪視服務 */
+    'caring_methods:9': LINKS.plan + '#content',   /* 心理支持懇談 */
+    'caring_methods:10': LINKS.learning,           /* 活動課程提供 */
+    'caring_methods:11': LINKS.plan + '#content',  /* 環境安全評估 */
+    'caring_methods:12': LINKS.plan + '#content',  /* 社會資源提供 */
+    'caring_methods:14': LINKS.plan + '#content',  /* 法律顧問諮詢 */
+    'caring_methods:15': LINKS.plan + '#content',  /* 飲食健康建議 */
+    'caring_methods:16': LINKS.plan + '#content',  /* 健康運動指導 */
+    /* 不帶分類的消息總覽；停用的文章，伺服器也會先跳到這裡 */
+    'news:': LINKS.news, 'news:9': LINKS.news
+  };
+  /* 115/10/30 補：整區不再使用的舊單元，不論分類或文章編號都轉走 */
+  var REDIRECT_ACTIONS = {
+    expert_lectures: LINKS.learning,       /* 專家講座分類 */
+    expert_lectures_in: LINKS.learning,    /* 專家講座內頁 */
+    links: LINKS.partner + '#partners',    /* 相關連結 */
+    link: LINKS.partner + '#partners'
   };
 
   /* 預覽模式：代號 → [pages/ 裡的檔名, 後台內容放的位置] */
@@ -131,8 +161,10 @@
   var id = q.get('id') || '';
   var cid = q.get('cid') || '';
 
-  if (REDIRECTS_ON && REDIRECTS[action + ':' + (id || cid)]) {
-    location.replace(REDIRECTS[action + ':' + (id || cid)]);
+  var own = function (o, k) { return Object.prototype.hasOwnProperty.call(o, k) ? o[k] : ''; };
+  var redirectTo = REDIRECTS_ON && (own(REDIRECTS, action + ':' + (id || cid)) || own(REDIRECT_ACTIONS, action));
+  if (redirectTo) {
+    location.replace(redirectTo);
     return;
   }
 
