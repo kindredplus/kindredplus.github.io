@@ -60,7 +60,8 @@
     disclosure: 'index.php?action=about&id=14',
     donate: 'index.php?action=recruitment&id=6',
     contact: 'index.php?action=contact',
-    rules: 'index.php?action=caring_methods&id=20'
+    rules: 'index.php?action=caring_methods&id=20',
+    fund: 'index.php?action=recruitment&id=15'    /* 勸募公開徵信（公開資訊頁連過去） */
   };
 
   /* 頁首選單（115/10/30 董事長）：[代號, 名稱, 段落錨點, 說明] */
@@ -88,7 +89,9 @@
     partner: ['企業合作專區｜賽親關懷基金會', '關懷員工、員工親眷與社區長者，為員工舉辦樂齡生活講座，依企業的需要量身規劃。'],
     disclosure: ['公開資訊｜賽親關懷基金會', '本會的工作計畫、工作報告、財務報告與捐款芳名錄，依年度公開。'],
     donate: ['捐款支持｜賽親關懷基金會', '線上捐款、銀行匯款、郵政劃撥與外幣匯款資訊，以及收據與徵信說明。'],
-    contact: ['預約諮詢｜賽親關懷基金會', '歡迎來電、來信，或填寫線上表單，我們會與您聯繫。']
+    contact: ['預約諮詢｜賽親關懷基金會', '歡迎來電、來信，或填寫線上表單，我們會與您聯繫。'],
+    rules: ['網站及資訊使用規範｜賽親關懷基金會', '財團法人臺北市長者賽親關懷基金會網站及資訊使用規範。'],
+    fund: ['勸募公開徵信｜賽親關懷基金會', '114 年度勸募活動（衛部救字第 1141360917 號）捐贈名單。']
   };
 
   /* 舊網址轉到新頁面。新頁面都上線、檢查過後，才把 REDIRECTS_ON 改成 true */
@@ -99,16 +102,16 @@
     'about:3': LINKS.about + '#team',
     'about:4': LINKS.disclosure,
     'about:5': LINKS.disclosure + '#finance',
-    'about:9': LINKS.plan + '#join',
+    'about:9': LINKS.contact,              /* 下載文件（空白頁）：新站不提供下載，申請由預約諮詢開始 */
     'about:10': LINKS.disclosure + '#donors',
     'about:11': LINKS.disclosure + '#report',
     'about:13': LINKS.disclosure + '#fund',
     'recruitment:11': LINKS.donate,
     'recruitment:12': LINKS.disclosure + '#donors',
-    'caring_methods:17': LINKS.plan,
-    'caring_methods:18': LINKS.plan,
+    'caring_methods:17': LINKS.plan + '#content',   /* 其他－長者生平紀錄與實踐（陪跑的內容） */
+    'caring_methods:18': LINKS.contact,    /* 回饋長者訪視服務表／申請表單 */
     'caring_methods:19': LINKS.plan + '#join',
-    'caring_methods:21': LINKS.plan + '#join',
+    'caring_methods:21': LINKS.contact,    /* 樂齡生活規畫服務及申請書下載 */
     'news:1': LINKS.news, 'news:8': LINKS.news, 'news:10': LINKS.news, 'news:11': LINKS.news, 'news:12': LINKS.news, 'news:13': LINKS.news,
     /* 115/10/30 補：不帶編號的各區首頁，與後台早已停用的舊頁（停用頁點進去是空白） */
     'about:': LINKS.about,
@@ -157,7 +160,9 @@
     alone: ['alone.html', '.care_sec .unreset'],
     learning: ['learning.html', '.care_sec .unreset'],
     partner: ['partner.html', '.member_sec .unreset'],
-    donate: ['donate.html', '.member_sec .unreset']
+    donate: ['donate.html', '.member_sec .unreset'],
+    rules: ['rules.html', '.care_sec .unreset'],
+    fund: ['fund.html', '.member_sec .unreset']
   };
 
   /* ================= 判斷目前頁面 ================= */
@@ -336,7 +341,7 @@
         '</div>' +
         '<nav class="kp-footer__cols" aria-label="網站地圖">' + cols + '</nav>' +
       '</div>' +
-      '<div class="kp-footer__bottom"><span>© ' + SITE.name + '</span><span>' + SITE.regNo + '</span><a href="' + LINKS.rules + '">網路及資訊使用規範</a></div>';
+      '<div class="kp-footer__bottom"><span>© ' + SITE.name + '</span><span>' + SITE.regNo + '</span><a href="' + LINKS.rules + '">網站及資訊使用規範</a></div>';
   }
 
   /* ================= 跳到主要內容 ================= */
