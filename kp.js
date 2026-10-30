@@ -132,7 +132,12 @@
     'caring_methods:15': LINKS.plan + '#content',  /* 飲食健康建議 */
     'caring_methods:16': LINKS.plan + '#content',  /* 健康運動指導 */
     /* 不帶分類的消息總覽；停用的文章，伺服器也會先跳到這裡 */
-    'news:': LINKS.news, 'news:9': LINKS.news
+    'news:': LINKS.news, 'news:9': LINKS.news,
+    /* 後台早年已刪除的編號（不會再被使用），舊連結點進去是空白 */
+    'news:2': LINKS.news, 'news:3': LINKS.news, 'news:4': LINKS.news, 'news:5': LINKS.news, 'news:6': LINKS.news,
+    'recruitment:1': LINKS.donate, 'recruitment:2': LINKS.donate, 'recruitment:3': LINKS.donate, 'recruitment:4': LINKS.donate, 'recruitment:5': LINKS.donate,
+    'recruitment:7': LINKS.donate, 'recruitment:8': LINKS.donate, 'recruitment:10': LINKS.donate, 'recruitment:13': LINKS.donate, 'recruitment:14': LINKS.donate,
+    'caring_methods:2': LINKS.home + '#programmes'
   };
   /* 115/10/30 補：整區不再使用的舊單元，不論分類或文章編號都轉走 */
   var REDIRECT_ACTIONS = {
