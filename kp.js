@@ -54,8 +54,8 @@
     about: 'index.php?action=about&id=15',
     plan: 'index.php?action=caring_methods&id=1',
     trust: 'index.php?action=caring_methods&id=13',
-    alone: '',      /* 獨居陪伴計畫：後台建好後填入，例如 'index.php?action=caring_methods&id=22' */
-    learning: '',   /* 樂齡共學計畫：同上 */
+    alone: 'index.php?action=caring_methods&id=22',      /* 獨居陪伴計畫（115/10/30 後台新建） */
+    learning: 'index.php?action=caring_methods&id=23',   /* 樂齡共學計畫（115/10/30 後台新建） */
     partner: 'index.php?action=recruitment&id=9',
     disclosure: 'index.php?action=about&id=14',
     donate: 'index.php?action=recruitment&id=6',
