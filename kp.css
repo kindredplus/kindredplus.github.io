@@ -130,7 +130,8 @@ html.kp :focus-visible { outline: 3px solid var(--kp-otext); outline-offset: 3px
 .kp-content .kp-crumb a:hover { color: var(--kp-otext); }
 .kp-content .kp-measure { max-width: 34em; }
 .kp-content .kp-em { font-weight: 700; font-size: 1.1875rem; color: var(--kp-otext); }
-.kp-content .kp-todo { background: #FFF1B8; color: #4A3D00; padding: 2px 6px; font-size: 1rem; }
+/* 工作備註（kp-todo）一律不在前台顯示 */
+.kp-todo, p:has(> .kp-todo:only-child) { display: none !important; }
 .kp-content [id] { scroll-margin-top: 150px; }
 
 /* 文字連結：底線，滑過變粗 */
