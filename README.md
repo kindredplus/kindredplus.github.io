@@ -1,5 +1,8 @@
 # 賽親官網樣式檔
 
+> **115/11/06 起官網已不再使用本 repo。** 檔案已搬到 [kindredplus/static.kindredplus.org](https://github.com/kindredplus/static.kindredplus.org)（網址 https://static.kindredplus.org/），之後修改請改那邊；改這裡官網不會更新。原因：部分網路的過濾設備會擋 kindredplus.github.io 這個網址，官網在那些網路會跑版。
+
+
 本 repo 放的是 https://www.kindredplus.org 改版用的樣式與程式，透過 GitHub Pages 對外提供：
 
 - https://kindredplus.github.io/kp.js
